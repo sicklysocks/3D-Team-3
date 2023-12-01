@@ -25,6 +25,7 @@ public class pickUP : MonoBehaviour
                 item.GetComponent<Rigidbody>().isKinematic = true;
                 item.transform.position = objPosition.transform.position;
                 item.transform.parent = objPosition.transform;
+                hasItem = true;
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
