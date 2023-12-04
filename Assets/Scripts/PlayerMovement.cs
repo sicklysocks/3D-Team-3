@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
+    //Sound effects
+    public AudioClip jump;
+    public AudioClip land;
+    public AudioSource movementSource; 
+    
+
     //Movement
     public float moveSpeed;
 
@@ -37,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        movementSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -112,14 +121,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        
         //reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        movementSource.clip = jump;
+        movementSource.Play();
     }
 
     void ResetJump()
     {
+        movementSource.clip = land;
         readyToJump = true;
     }
 }

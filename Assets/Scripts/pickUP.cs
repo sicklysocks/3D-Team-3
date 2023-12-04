@@ -25,6 +25,7 @@ public class pickUP : MonoBehaviour
                 item.GetComponent<Rigidbody>().isKinematic = true;
                 item.transform.position = objPosition.transform.position;
                 item.transform.parent = objPosition.transform;
+                hasItem = true;
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
@@ -36,6 +37,11 @@ public class pickUP : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "item")
+        {
+            canPickup = true;
+            item = other.gameObject;
+        }
+        if(other.gameObject.tag == "child")
         {
             canPickup = true;
             item = other.gameObject;
