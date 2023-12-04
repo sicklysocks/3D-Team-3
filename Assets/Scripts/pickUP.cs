@@ -41,6 +41,11 @@ public class pickUP : MonoBehaviour
             canPickup = true;
             item = other.gameObject;
         }
+        if(other.gameObject.tag == "child")
+        {
+            canPickup = true;
+            item = other.gameObject;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
