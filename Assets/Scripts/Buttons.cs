@@ -10,11 +10,6 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("LevelOne");
     }
 
-    public void OnClickBack()
-    {
-        SceneManager.LoadScene("Menu");
-    }
-
     public void OnClickHelp()
     {
         SceneManager.LoadScene("Help");
@@ -22,6 +17,11 @@ public class Buttons : MonoBehaviour
     public void OnClickCredits()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void OnClickReturn()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     public void OnClickQuit()
