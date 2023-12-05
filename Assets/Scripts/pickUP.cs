@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class pickUP : MonoBehaviour
 {
+
     public GameObject objPosition;
     bool canPickup;
     public GameObject item;
@@ -46,7 +47,10 @@ public class pickUP : MonoBehaviour
             canPickup = true;
             item = other.gameObject;
         }
+       
     }
+
+    
     private void OnTriggerExit(Collider other)
     {
         canPickup = false;

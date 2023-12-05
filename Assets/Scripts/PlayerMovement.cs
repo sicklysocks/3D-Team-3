@@ -136,4 +136,14 @@ public class PlayerMovement : MonoBehaviour
         movementSource.clip = land;
         readyToJump = true;
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hole")
+        {
+            
+            Debug.Log("Switch to gameOver");
+        }
+    }
+
 }
