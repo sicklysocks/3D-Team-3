@@ -8,7 +8,9 @@ public class pickUP : MonoBehaviour
     public GameObject objPosition;
     bool canPickup;
     public GameObject item;
+    public GameObject itemChild;
     bool hasItem;
+    bool emptyPit;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,11 @@ public class pickUP : MonoBehaviour
         {
             canPickup = true;
             item = other.gameObject;
+            itemChild = other.gameObject.transform.GetChild(0).gameObject;
+        }
+        if (other.gameObject.tag == "pit")
+        {
+            emptyPit = true;
         }
         if(other.gameObject.tag == "child")
         {
