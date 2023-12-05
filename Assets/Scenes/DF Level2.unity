@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 118309627279749227, guid: 9e9a27b0c71ff474081c1c9102117d1e, type: 3}
+      propertyPath: m_TagString
+      value: shovel
+      objectReference: {fileID: 0}
     - target: {fileID: 535149867870210836, guid: 9e9a27b0c71ff474081c1c9102117d1e, type: 3}
       propertyPath: m_Name
       value: 'itemTemplate '
