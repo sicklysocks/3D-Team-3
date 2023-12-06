@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -154,5 +155,6 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Switch to gameOver");
         }
     }
+    
 
 }
