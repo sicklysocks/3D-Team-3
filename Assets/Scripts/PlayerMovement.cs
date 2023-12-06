@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
+    private Scene scene; // scene manager stuff
+
     //Sound effects
     public AudioClip jump;
     public AudioClip land;
-    public AudioSource movementSource; 
-    
+    public AudioSource movementSource;
+
+    public AudioSource sandbox;
+    public AudioSource carCrash;
+
 
     //Movement
     public float moveSpeed;
@@ -46,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         movementSource = GetComponent<AudioSource>();
+
+        scene = SceneManager.GetActiveScene(); //get current scene
     }
 
     // Update is called once per frame
@@ -139,9 +147,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hole")
+        if (other.gameObject.tag == "Sand Box")
         {
-            
+            sandbox.Play(); // play sandbox collision sound
+            SceneManager.LoadScene("Credits"); //Change to game over scene when created
             Debug.Log("Switch to gameOver");
         }
     }

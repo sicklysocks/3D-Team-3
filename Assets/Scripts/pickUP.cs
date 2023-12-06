@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pickUP : MonoBehaviour
 {
-
+    private Scene scene; // scene manager stuff
     public GameObject objPosition;
     bool canPickup;
     public GameObject item;
@@ -13,6 +14,7 @@ public class pickUP : MonoBehaviour
     bool emptyPit;
     public AudioSource pickupSound;
     public AudioClip pickupClip;
+    private int kidsCollected = 0; 
     // Start is called before the first frame update
     void Start()
     {
@@ -47,16 +49,25 @@ public class pickUP : MonoBehaviour
             item = other.gameObject;
             itemChild = other.gameObject.transform.GetChild(0).gameObject;
         }
-        if (other.gameObject.tag == "pit")
-        {
-            emptyPit = true;
-        }
         if(other.gameObject.tag == "child")
         {
             canPickup = true;
             item = other.gameObject;
+            pickupSound.Play(); //play pickup sound
+            
+            kidsCollected++; // increment number of kids collected by 1
+
         }
        
+    }
+
+    public void Winner()
+    {
+        if (kidsCollected == 5)
+        {
+            SceneManager.LoadScene("Menu"); //Change to Win Scene what created
+        }
+
     }
 
     
