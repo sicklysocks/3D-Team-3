@@ -11,6 +11,8 @@ public class pickUP : MonoBehaviour
     public GameObject itemChild;
     bool hasItem;
     bool emptyPit;
+    public AudioSource pickupSound;
+    public AudioClip pickupClip;
     // Start is called before the first frame update
     void Start()
     {

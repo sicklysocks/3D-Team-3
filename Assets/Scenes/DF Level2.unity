@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 118309627279749227, guid: 9e9a27b0c71ff474081c1c9102117d1e, type: 3}
+      propertyPath: m_TagString
+      value: shovel
+      objectReference: {fileID: 0}
     - target: {fileID: 535149867870210836, guid: 9e9a27b0c71ff474081c1c9102117d1e, type: 3}
       propertyPath: m_Name
       value: 'itemTemplate '
@@ -14258,11 +14262,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5046134356706159573, guid: d3293ea4a24df1840bb80a59cf73ef0f, type: 3}
   m_PrefabInstance: {fileID: 1016032720}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1023426635 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7989029882350863557, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
-  m_PrefabInstance: {fileID: 2144853975}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1024502733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16004,10 +16003,7 @@ PrefabInstance:
       objectReference: {fileID: 1098749590}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8059236814307044977, guid: 7d4a6dc45cc821d4ba086777a8955171, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1023426635}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d4a6dc45cc821d4ba086777a8955171, type: 3}
 --- !u!1001 &1121147035
@@ -27658,11 +27654,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5779962075532682753, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
   m_PrefabInstance: {fileID: 2021162515}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2028184514 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8059236814307044977, guid: 7d4a6dc45cc821d4ba086777a8955171, type: 3}
-  m_PrefabInstance: {fileID: 1120162781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2029994365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28986,7 +28977,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2028184514}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7153613612837907873, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
       propertyPath: m_Name
@@ -28998,7 +28989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7989029882350863557, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.112
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 7989029882350863557, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29108,6 +29099,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1120162781}
+  - {fileID: 2144853975}
   - {fileID: 2036733632}
   - {fileID: 2020022931}
   - {fileID: 1352690733}
