@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class pickUP : MonoBehaviour
@@ -14,7 +15,10 @@ public class pickUP : MonoBehaviour
     bool emptyPit;
     public AudioSource pickupSound;
     public AudioClip pickupClip;
-    private int kidsCollected = 0; 
+    private int kidsCollected = 0;
+
+    public MoveChild mc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +37,14 @@ public class pickUP : MonoBehaviour
                 item.transform.position = objPosition.transform.position;
                 item.transform.parent = objPosition.transform;
                 hasItem = true;
+                mc.agent.enabled = false;
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
         {
             item.GetComponent <Rigidbody>().isKinematic = false;
             item.transform.parent = null;
+            mc.agent.enabled = true;
         }
     }
     private void OnTriggerEnter(Collider other)
