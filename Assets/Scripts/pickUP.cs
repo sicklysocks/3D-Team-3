@@ -82,10 +82,7 @@ public class pickUP : MonoBehaviour
 
     public void Winner()
     {
-        
             SceneManager.LoadScene("Credits"); //Change to Win Scene what created
-        
-
     }
 
     
