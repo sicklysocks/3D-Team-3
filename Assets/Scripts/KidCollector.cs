@@ -23,8 +23,8 @@ public class KidCollector : MonoBehaviour
         
         if (other.gameObject.tag == "player" && pick.hasItem == true)
         {
-            //pick.kidsCollected++; // increment number of kids collected by 1
-            //Destroy(pick.item);
+            pick.kidsCollected++; // increment number of kids collected by 1
+            Destroy(pick.item);
         }
 
     }

@@ -32,7 +32,6 @@ public class MoveChild : MonoBehaviour
              agent.SetDestination(newPos);
              timer = 0;
             
-            
         }
     }
 
