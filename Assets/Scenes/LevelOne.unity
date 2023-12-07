@@ -28912,7 +28912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 35
   angle: 121
-  playerRef: {fileID: 880533440}
+  playerRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
     m_Bits: 256
@@ -33207,7 +33207,6 @@ SceneRoots:
   - {fileID: 969799973}
   - {fileID: 1090027931}
   - {fileID: 132278538}
-  - {fileID: 1534375629}
   - {fileID: 443602809}
   - {fileID: 475488511}
   - {fileID: 699861329}
@@ -33217,3 +33216,4 @@ SceneRoots:
   - {fileID: 1336544150}
   - {fileID: 1990816661}
   - {fileID: 819081016}
+  - {fileID: 1534375629}
