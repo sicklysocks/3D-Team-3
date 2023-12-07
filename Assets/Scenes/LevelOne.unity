@@ -30905,7 +30905,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1117473355297516108, guid: 880416614596d624abff4a46147575c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.181564
+      value: -44.83
       objectReference: {fileID: 0}
     - target: {fileID: 1117473355297516108, guid: 880416614596d624abff4a46147575c2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30913,7 +30913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1117473355297516108, guid: 880416614596d624abff4a46147575c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.01433
+      value: -26.01
       objectReference: {fileID: 0}
     - target: {fileID: 1117473355297516108, guid: 880416614596d624abff4a46147575c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30974,6 +30974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cpsPrefab: {fileID: 8982134554786206019, guid: e758270f8a795a942a27a6a21fbeef51, type: 3}
   instance: {fileID: 0}
+  cpsTimer: {fileID: 0}
+  timeRemaining: 10
+  timerIsRunning: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

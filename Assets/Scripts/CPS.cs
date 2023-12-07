@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CPS : MonoBehaviour
 {
     public GameObject cpsPrefab;
     public GameObject instance;
+
+    public TMP_Text cpsTimer;
+
+    public float timeRemaining = 5;
+    public bool timerIsRunning = false;
 
     Vector3 rotationVector = new Vector3(0, -50, 0);
 
@@ -18,7 +24,16 @@ public class CPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+        else
+        {
+            Debug.Log("CPS is here");
+            timeRemaining = 0;
+            timerIsRunning = true;
+        }
     }
 
     private void Spawn()
