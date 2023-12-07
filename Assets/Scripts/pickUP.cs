@@ -73,7 +73,7 @@ public class pickUP : MonoBehaviour
             pickupSound.clip = pickupClip;
             pickupSound.Play(); //play pickup sound
             
-            kidsCollected++; // increment number of kids collected by 1
+            //kidsCollected++; // increment number of kids collected by 1
 
         }
        
