@@ -46,8 +46,8 @@ public class Dog : MonoBehaviour
             dogSource.clip = bark;
             dogSource.Play();
 
-            Invoke("StopDog", 2.0f);
-            Invoke("StartDog", 1.0f);
+            Invoke("StopDog", 5.0f);
+            Invoke("StartDog", 6.0f);
         }
 
 

@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Sand Box")
         {
             sandbox.Play(); // play sandbox collision sound
-            Invoke("GameOver", 2.0f);
+            Invoke("GameOver",0.5f);
             Debug.Log("Switch to gameOver");
         }
     }

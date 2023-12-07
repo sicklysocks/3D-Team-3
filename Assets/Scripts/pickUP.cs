@@ -13,7 +13,7 @@ public class pickUP : MonoBehaviour
     public GameObject item;
     public GameObject itemChild;
     public bool hasItem;
-    bool emptyPit;
+    //bool emptyPit;
     public AudioSource pickupSound;
     public AudioClip pickupClip;
     public int kidsCollected = 0;
@@ -42,7 +42,6 @@ public class pickUP : MonoBehaviour
                 hasItem = true;
                 grabbed = true;
                 mc.agent.enabled = false;
-                kidsCollected++;
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
@@ -53,7 +52,7 @@ public class pickUP : MonoBehaviour
             
         }
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
-        if(kidsCollected == 3)
+        if(kidsCollected == 1)
         {
             Invoke("Winner", 1.0f);
         }
@@ -74,7 +73,7 @@ public class pickUP : MonoBehaviour
             pickupSound.clip = pickupClip;
             pickupSound.Play(); //play pickup sound
             
-            //kidsCollected++; // increment number of kids collected by 1
+            kidsCollected++; // increment number of kids collected by 1
 
         }
        
