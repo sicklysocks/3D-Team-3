@@ -163,7 +163,6 @@ public class PlayerMovement : MonoBehaviour
             pick.kidsCollected++; // increment number of kids collected by 1
             Destroy(pick.item);
         }
-
     }
     
     public void GameOver()
