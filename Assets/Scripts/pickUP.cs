@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class pickUP : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class pickUP : MonoBehaviour
     bool canPickup;
     public GameObject item;
     public GameObject itemChild;
-    bool hasItem;
+    public bool hasItem;
     bool emptyPit;
     public AudioSource pickupSound;
     public AudioClip pickupClip;
-    private int kidsCollected = 0;
+    public int kidsCollected = 0;
+    public bool grabbed;
+    public TMP_Text kidsCollectedText;
 
     public MoveChild mc;
 
@@ -37,15 +40,18 @@ public class pickUP : MonoBehaviour
                 item.transform.position = objPosition.transform.position;
                 item.transform.parent = objPosition.transform;
                 hasItem = true;
+                grabbed = true;
                 mc.agent.enabled = false;
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
         {
-            item.GetComponent <Rigidbody>().isKinematic = false;
+            item.GetComponent<Rigidbody>().isKinematic = false;
             item.transform.parent = null;
-            mc.agent.enabled = true;
+            
+            
         }
+        kidsCollectedText.text = "Kids Collected: " + kidsCollected;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -59,9 +65,10 @@ public class pickUP : MonoBehaviour
         {
             canPickup = true;
             item = other.gameObject;
+            pickupSound.clip = pickupClip;
             pickupSound.Play(); //play pickup sound
             
-            kidsCollected++; // increment number of kids collected by 1
+            //kidsCollected++; // increment number of kids collected by 1
 
         }
        
@@ -69,7 +76,7 @@ public class pickUP : MonoBehaviour
 
     public void Winner()
     {
-        if (kidsCollected == 5)
+        if (kidsCollected == 1)
         {
             SceneManager.LoadScene("Menu"); //Change to Win Scene what created
         }

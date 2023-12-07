@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class MoveChild : MonoBehaviour
 {
-
+    public pickUP pU;
     public float wanderRadius;
     public float wanderTimer;
 
-    private Transform target;
+    public Transform target;
     public NavMeshAgent agent;
-    private float timer;
+    public float timer;
 
     // Use this for initialization
     void OnEnable()
@@ -27,9 +27,12 @@ public class MoveChild : MonoBehaviour
 
         if (timer >= wanderTimer)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.SetDestination(newPos);
-            timer = 0;
+            
+             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+             agent.SetDestination(newPos);
+             timer = 0;
+            
+            
         }
     }
 
