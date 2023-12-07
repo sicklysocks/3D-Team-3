@@ -42,6 +42,7 @@ public class pickUP : MonoBehaviour
                 hasItem = true;
                 grabbed = true;
                 mc.agent.enabled = false;
+                kidsCollected++;
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
@@ -52,6 +53,11 @@ public class pickUP : MonoBehaviour
             
         }
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
+        if(kidsCollected == 1)
+        {
+            Invoke("Winner", 1.0f);
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -76,10 +82,9 @@ public class pickUP : MonoBehaviour
 
     public void Winner()
     {
-        if (kidsCollected == 1)
-        {
-            SceneManager.LoadScene("Menu"); //Change to Win Scene what created
-        }
+        
+            SceneManager.LoadScene("Credits"); //Change to Win Scene what created
+        
 
     }
 

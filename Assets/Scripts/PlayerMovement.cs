@@ -151,10 +151,14 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Sand Box")
         {
             sandbox.Play(); // play sandbox collision sound
-            SceneManager.LoadScene("Credits"); //Change to game over scene when created
+            Invoke("GameOver", 2.0f);
             Debug.Log("Switch to gameOver");
         }
     }
     
+    public void GameOver()
+    {
+        SceneManager.LoadScene("Credits"); //Change to game over scene when created
+    }
 
 }
