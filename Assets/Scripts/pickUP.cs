@@ -53,7 +53,7 @@ public class pickUP : MonoBehaviour
             
         }
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
-        if(kidsCollected == 1)
+        if(kidsCollected == 3)
         {
             Invoke("Winner", 1.0f);
         }
