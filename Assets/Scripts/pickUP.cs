@@ -17,14 +17,16 @@ public class pickUP : MonoBehaviour
     public AudioSource pickupSound;
     public AudioClip pickupClip;
     public int kidsCollected = 0;
-    public bool grabbed;
     public TMP_Text kidsCollectedText;
+
+    public GameObject placeholder;
 
     public MoveChild mc;
 
     // Start is called before the first frame update
     void Start()
     {
+        item = placeholder;
         canPickup = false;
         hasItem = false;
     }
@@ -40,7 +42,6 @@ public class pickUP : MonoBehaviour
                 item.transform.position = objPosition.transform.position;
                 item.transform.parent = objPosition.transform;
                 hasItem = true;
-                grabbed = true;
                 mc.agent.enabled = false;
             }
         }
@@ -48,8 +49,10 @@ public class pickUP : MonoBehaviour
         {
             item.GetComponent<Rigidbody>().isKinematic = false;
             item.transform.parent = null;
-            
-            
+            mc.agent.enabled = true;
+            item = placeholder;
+
+
         }
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
         if(kidsCollected == 1)
@@ -64,7 +67,7 @@ public class pickUP : MonoBehaviour
         {
             canPickup = true;
             item = other.gameObject;
-            itemChild = other.gameObject.transform.GetChild(0).gameObject;
+            //itemChild = other.gameObject.transform.GetChild(0).gameObject;
         }
         if(other.gameObject.tag == "child")
         {
@@ -81,7 +84,9 @@ public class pickUP : MonoBehaviour
 
     public void Winner()
     {
-            SceneManager.LoadScene("Credits"); //Change to Win Scene what created
+       //if current scene is level 2 load win scene
+
+            SceneManager.LoadScene("Transition"); //Change to Win Scene what created
     }
 
     

@@ -11,6 +11,8 @@ TagManager:
   - player
   - dog
   - bone
+  - shovel
+  - collector
   layers:
   - Default
   - TransparentFX

@@ -46,6 +46,9 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded;
 
     Rigidbody rb;
+
+    public pickUP pick;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -154,6 +157,13 @@ public class PlayerMovement : MonoBehaviour
             Invoke("GameOver",0.5f);
             Debug.Log("Switch to gameOver");
         }
+
+        if (other.gameObject.tag == "collector" && pick.hasItem == true)
+        {
+            pick.kidsCollected++; // increment number of kids collected by 1
+            Destroy(pick.item);
+        }
+
     }
     
     public void GameOver()

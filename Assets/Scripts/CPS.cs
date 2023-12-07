@@ -7,7 +7,7 @@ public class CPS : MonoBehaviour
     public GameObject cpsPrefab;
     public GameObject instance;
 
-    Vector3 rotationVector = new Vector3(0, 45, 0);
+    Vector3 rotationVector = new Vector3(0, -50, 0);
 
     // Start is called before the first frame update
     void Start()
