@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     private Scene scene; // scene manager stuff
+
+    public int health = 100;
+    public TMP_Text healthText;
 
     //Sound effects
     public AudioClip jump;
@@ -69,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
 
+        healthText.text = "Health: " + health;
+
         if (grounded)
         {
             rb.drag = groundDrag;
@@ -76,6 +82,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.drag = 0;
+        }
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("Credits");
         }
     }
 

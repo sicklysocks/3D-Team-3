@@ -10,6 +10,9 @@ public class CPS : MonoBehaviour
 
     public TMP_Text cpsTimer;
 
+    public AudioSource countSource;
+    public AudioClip countdown5;
+
     public float timeRemaining = 5;
     public bool timerIsRunning = false;
 
@@ -34,6 +37,14 @@ public class CPS : MonoBehaviour
             timeRemaining = 0;
             timerIsRunning = true;
         }
+
+        if (timeRemaining <= 5)
+        {
+            countSource.clip = countdown5;
+            countSource.Play();
+        }
+
+        cpsTimer.text = "CPS coming in: " + timeRemaining.ToString();
     }
 
     private void Spawn()

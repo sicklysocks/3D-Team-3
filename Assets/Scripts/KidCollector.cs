@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 //using static UnityEditor.Progress;
 
@@ -22,12 +23,16 @@ public class KidCollector : MonoBehaviour
         
     }
 
-    void OnColiisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
         if(col.gameObject == player)
         {
-            pick.kidsCollected++; // increment number of kids collected by 1
-            Destroy(pick.item);
+            if (pick.item != null)
+            {
+                Destroy(pick.item);
+                pick.item = null;
+                pick.kidsCollected++; // increment number of kids collected by 1
+            }
         }
     }
 

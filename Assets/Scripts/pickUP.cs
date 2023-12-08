@@ -19,16 +19,20 @@ public class pickUP : MonoBehaviour
     public int kidsCollected = 0;
     public TMP_Text kidsCollectedText;
 
-    public GameObject placeholder;
-
     public MoveChild mc;
+
+    Scene curScene;
+    string sceneName;
 
     // Start is called before the first frame update
     void Start()
     {
-        item = placeholder;
+        item = null;
         canPickup = false;
         hasItem = false;
+
+        curScene = SceneManager.GetActiveScene();
+        sceneName = curScene.name;
     }
 
     // Update is called once per frame
@@ -50,12 +54,13 @@ public class pickUP : MonoBehaviour
             item.GetComponent<Rigidbody>().isKinematic = false;
             item.transform.parent = null;
             mc.agent.enabled = true;
-            item = placeholder;
+            item = null;
 
 
         }
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
-        if(kidsCollected == 1)
+
+        if(kidsCollected >= 1)
         {
             Invoke("Winner", 1.0f);
         }
@@ -75,8 +80,6 @@ public class pickUP : MonoBehaviour
             item = other.gameObject;
             pickupSound.clip = pickupClip;
             pickupSound.Play(); //play pickup sound
-            
-            //kidsCollected++; // increment number of kids collected by 1
 
         }
        
@@ -84,11 +87,17 @@ public class pickUP : MonoBehaviour
 
     public void Winner()
     {
-       //if current scene is level 2 load win scene
+       if (sceneName == "LevelOne")
+       {
+           SceneManager.LoadScene("Transition"); //Change to Win Scene what created
+       }
 
-            SceneManager.LoadScene("Transition"); //Change to Win Scene what created
+       if (sceneName == "DF Level2")
+       {
+            SceneManager.LoadScene("Win");
+       }
+            
     }
-
     
     private void OnTriggerExit(Collider other)
     {
