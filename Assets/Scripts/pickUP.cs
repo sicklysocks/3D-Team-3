@@ -60,7 +60,7 @@ public class pickUP : MonoBehaviour
         }
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
 
-        if(kidsCollected >= 1)
+        if(kidsCollected == 5 && sceneName == "LevelOne")
         {
             Invoke("Winner", 1.0f);
         }
