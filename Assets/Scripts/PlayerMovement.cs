@@ -53,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
 
     public pickUP pick;
 
+    
+    public TMP_Text gameOverCause;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -164,21 +167,33 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Sand Box")
         {
+            gameOverCause.text = "You drowned in a sandbox and died. Those poor children.";
             sandbox.Play(); // play sandbox collision sound
             Invoke("GameOver",0.5f);
             Debug.Log("Switch to gameOver");
         }
 
-        if (other.gameObject.tag == "collector" && pick.hasItem == true)
+        if (other.gameObject.tag == "collector")
         {
-            pick.kidsCollected++; // increment number of kids collected by 1
-            Destroy(pick.item);
+            if (pick.item != null)
+            {
+                transform.position = new Vector3(-58.69f, 10.219f, -10.6f);
+                Destroy(pick.item);
+                pick.kidsCollected += 1;
+                pick.item = null;
+
+
+
+                // increment number of kids collected by 1
+            }
+            //pick.kidsCollected++; // increment number of kids collected by 1
+            //Destroy(pick.item);
         }
     }
     
     public void GameOver()
     {
-        SceneManager.LoadScene("Credits"); //Change to game over scene when created
+        SceneManager.LoadScene("Lose"); //Change to game over scene when created
     }
 
 }
