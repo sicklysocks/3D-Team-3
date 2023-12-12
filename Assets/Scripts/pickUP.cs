@@ -21,11 +21,13 @@ public class pickUP : MonoBehaviour
     public AudioClip pickupClip;
     public int kidsCollected = 0;
     public TMP_Text kidsCollectedText;
+    public bool hasBone;
 
     MoveChild mc;
     public List<GameObject> kids;
 
-    public 
+    public GameObject bone;
+    public GameObject dog;
 
     Scene curScene;
     string sceneName;
@@ -92,6 +94,10 @@ public class pickUP : MonoBehaviour
         {
             Invoke("Winner", 1.0f);
         }
+        if (kidsCollected == 10 && sceneName == "DF Level2")
+        {
+            Invoke("Winner", 1.0f);
+        }
 
     }
     private void OnTriggerEnter(Collider other)
@@ -109,6 +115,16 @@ public class pickUP : MonoBehaviour
             pickupSound.clip = pickupClip;
             pickupSound.Play(); //play pickup sound
 
+        }
+        if(other.gameObject.tag == "bone")
+        {
+            canPickup = true;
+            item = other.gameObject;
+            hasBone = true;
+        }
+        if (other.gameObject.tag == "dog" && item == bone)
+        {
+            dog.GetComponent<Rigidbody>().isKinematic = true;
         }
        
     }

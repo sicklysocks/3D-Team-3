@@ -33,7 +33,7 @@ public class Dog : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Lose");
         }
     }
 
