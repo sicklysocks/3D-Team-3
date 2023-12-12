@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     public pickUP pick;
+    public MoveChild mc;
 
     
     public TMP_Text gameOverCause;
@@ -185,8 +186,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (pick.item != null)
             {
-                transform.position = new Vector3(-58.69f, 10.219f, -10.6f);
-                Destroy(pick.item);
+                pick.item.transform.position = new Vector3(-38.49f, -24.26f, -48.54f);
+                //Destroy(pick.item);
+                //mc.agent.enabled = true;
                 pick.kidsCollected += 1;
                 pick.item = null;
 

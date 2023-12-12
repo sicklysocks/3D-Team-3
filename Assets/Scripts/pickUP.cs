@@ -87,16 +87,17 @@ public class pickUP : MonoBehaviour
 
 
         }
-        kidsCollectedText.text = "Kids Collected: " + kidsCollected;
+        
 
-        if(kidsCollected == 5 && sceneName == "LevelOne")
+        if(kidsCollected == 5)
         {
-            Invoke("Winner", 1.0f);
+            Invoke("Winner", 0.5f);
         }
         if (kidsCollected == 10 && sceneName == "DF Level2")
         {
             Invoke("Winner", 1.0f);
         }
+        kidsCollectedText.text = "Kids Collected: " + kidsCollected;
 
     }
     private void OnTriggerEnter(Collider other)
