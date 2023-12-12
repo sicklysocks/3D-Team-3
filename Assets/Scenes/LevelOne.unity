@@ -14520,9 +14520,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+      propertyPath: kids.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
       propertyPath: kidsCollectedText
       value: 
       objectReference: {fileID: 910815712}
+    - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+      propertyPath: kids.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424103912480656}
+    - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+      propertyPath: kids.Array.data[1]
+      value: 
+      objectReference: {fileID: 924385907}
+    - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+      propertyPath: kids.Array.data[2]
+      value: 
+      objectReference: {fileID: 1827363805}
+    - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+      propertyPath: kids.Array.data[3]
+      value: 
+      objectReference: {fileID: 567298454}
+    - target: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+      propertyPath: kids.Array.data[4]
+      value: 
+      objectReference: {fileID: 517366748}
     - target: {fileID: 6702483150020470724, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
       propertyPath: pick
       value: 

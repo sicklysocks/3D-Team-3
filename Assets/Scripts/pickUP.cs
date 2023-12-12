@@ -19,7 +19,10 @@ public class pickUP : MonoBehaviour
     public int kidsCollected = 0;
     public TMP_Text kidsCollectedText;
 
-    public MoveChild mc;
+    MoveChild mc;
+    public List<GameObject> kids;
+
+    public 
 
     Scene curScene;
     string sceneName;
@@ -38,6 +41,12 @@ public class pickUP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (item == kids[1])
+        {
+            mc = kids[1].GetComponent("MoveChild");
+        }
+        
+
         if (canPickup == true) // if youve entered the objects collider
         {
             if (Input.GetKeyDown("e")) 
