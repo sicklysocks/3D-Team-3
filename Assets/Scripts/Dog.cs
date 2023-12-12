@@ -54,6 +54,7 @@ public class Dog : MonoBehaviour
         if (other.gameObject.tag == "bone")
         {
             Destroy(dog);
+            Destory(other.gameObject);
         }
 
     }
