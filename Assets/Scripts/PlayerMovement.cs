@@ -100,6 +100,24 @@ public class PlayerMovement : MonoBehaviour
             gameOverString = "You were caught by CPS, thank God!";
             
         }
+        if (SceneManager.GetActiveScene().name == "LevelOne" || SceneManager.GetActiveScene().name == "LevelTwo") //if current scene is level 1 or 2
+        {
+          BGmusic.instance.GetComponent<AudioSource>().Pause(); //pause music
+        }
+        else
+        {
+            BGmusic.instance.GetComponent<AudioSource>().Play(); //play music
+        }
+
+        if (SceneManager.GetActiveScene().name == "LevelOne" || SceneManager.GetActiveScene().name == "LevelTwo") //if current scene is level 1 or 2
+        {
+          MenuMusic.instance.GetComponent<AudioSource>().Pause(); //pause music
+        }
+        else
+        {
+            MenuMusic.instance.GetComponent<AudioSource>().Play(); //play music
+        }
+           
     }
 
     private void FixedUpdate()
