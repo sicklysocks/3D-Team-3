@@ -20451,9 +20451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426c4839d27e3ab4f96a8d3f5b0bfd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 0}
   cpsPrefab: {fileID: 8982134554786206019, guid: e758270f8a795a942a27a6a21fbeef51, type: 3}
   instance: {fileID: 0}
-  cpsTimer: {fileID: 0}
+  cpsTimer: {fileID: 951243978}
   countSource: {fileID: 1463209115}
   countdown5: {fileID: 8300000, guid: 7911bcbb327c00f44bca9c947ae96a59, type: 3}
   timeRemaining: 10
@@ -23098,7 +23099,7 @@ MonoBehaviour:
   run6: {fileID: 8300000, guid: c9eb525a19fe02c429c4c4fe4b7a4cbe, type: 3}
   run4: {fileID: 8300000, guid: 838ab8af81a93fe4f95fb81dd89b5d13, type: 3}
   run2: {fileID: 8300000, guid: f47bfa1b58d8f344baef41a27b16a47b, type: 3}
-  pick: {fileID: 0}
+  pick: {fileID: 1971197458}
 --- !u!4 &1680582619
 Transform:
   m_ObjectHideFlags: 0
@@ -27936,6 +27937,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1600262015}
   m_SourcePrefab: {fileID: 100100000, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+--- !u!114 &1971197458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 988164164483804084, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+  m_PrefabInstance: {fileID: 1971197457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600262014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9521513957fcf4bb779492b63f8f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1979047176
 GameObject:
   m_ObjectHideFlags: 0
