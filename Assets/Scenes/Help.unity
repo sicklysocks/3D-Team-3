@@ -803,11 +803,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_text: 'Collect your children from the park so you can get home
 
 
 
 '
+=======
+  m_text: 'Collect your kids and return them to the van. Don''t get caught by CPS,
+    fall in the sandbox, or attacked by the dog! '
+>>>>>>> Stashed changes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df99539624e45824abd33b922a4144c4, type: 2}
   m_sharedMaterial: {fileID: 3026790522330952543, guid: df99539624e45824abd33b922a4144c4, type: 2}
@@ -844,9 +849,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 0.95
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 42.28
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
