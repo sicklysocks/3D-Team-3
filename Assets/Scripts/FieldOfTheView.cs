@@ -13,6 +13,7 @@ public class FieldOfTheView : MonoBehaviour
 
     public LayerMask targetMask;
     public LayerMask obstructionMask;
+    public PlayerMovement play;
 
     public bool canSeePlayer;
 
@@ -58,6 +59,7 @@ public class FieldOfTheView : MonoBehaviour
           else //player is not in FOV
           {
                 canSeePlayer = true;
+                
                 Debug.Log("I CAN SEE YOU!!....GAME OVER");
                 SceneManager.LoadScene("Lose"); //load lose scene
 

@@ -16,7 +16,6 @@ public class pickUP : MonoBehaviour
     public GameObject item;
     public GameObject itemChild;
     public bool hasItem;
-    //bool emptyPit;
     public AudioSource pickupSound;
     public AudioClip pickupClip;
     public int kidsCollected = 0;
