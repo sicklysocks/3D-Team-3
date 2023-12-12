@@ -41,11 +41,47 @@ public class pickUP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (item == kids[0])
+        {
+            mc = kids[0].GetComponent<MoveChild>();
+        }
         if (item == kids[1])
         {
-            mc = kids[1].GetComponent("MoveChild");
+            mc = kids[1].GetComponent<MoveChild>();
         }
-        
+        if (item == kids[2])
+        {
+            mc = kids[2].GetComponent<MoveChild>();
+        }
+        if (item == kids[3])
+        {
+            mc = kids[3].GetComponent<MoveChild>();
+        }
+        if (item == kids[4])
+        {
+            mc = kids[4].GetComponent<MoveChild>();
+        }
+        if (item == kids[5])
+        {
+            mc = kids[5].GetComponent<MoveChild>();
+        }
+        if (item == kids[6])
+        {
+            mc = kids[6].GetComponent<MoveChild>();
+        }
+        if (item == kids[7])
+        {
+            mc = kids[7].GetComponent<MoveChild>();
+        }
+        if (item == kids[8])
+        {
+            mc = kids[8].GetComponent<MoveChild>();
+        }
+        if (item == kids[9])
+        {
+            mc = kids[9].GetComponent<MoveChild>();
+        }
+
 
         if (canPickup == true) // if youve entered the objects collider
         {
