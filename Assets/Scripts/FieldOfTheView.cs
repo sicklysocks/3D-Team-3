@@ -54,7 +54,7 @@ public class FieldOfTheView : MonoBehaviour
           }
           else //player is not in FOV
           {
-                canSeePlayer = false;
+                canSeePlayer = true;
           }
         }
         else if (canSeePlayer) //player is no longer in the view of CPS
