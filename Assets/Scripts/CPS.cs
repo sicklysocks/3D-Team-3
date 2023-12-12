@@ -48,7 +48,7 @@ public class CPS : MonoBehaviour
         else
         {
             Debug.Log("CPS is here");
-            timeRemaining = 0;
+            timeRemaining = 10;
             timerIsRunning = true;
         }
 
