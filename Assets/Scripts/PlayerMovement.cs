@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
+
 using TMPro;
 
 public class PlayerMovement : MonoBehaviour
@@ -55,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
     
     public TMP_Text gameOverCause;
+    public static string gameOverString;
+
+    public Canvas Lose;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene("Credits");
+        }
+        if (gameOverCause == null)
+        {
+            gameOverString = "You were caught by CPS, thank God!";
+            
         }
     }
 
@@ -167,7 +175,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Sand Box")
         {
-            gameOverCause.text = "You drowned in a sandbox and died. Those poor children.";
+            gameOverString = "You drowned in a sandbox and died. Those poor children.";
             sandbox.Play(); // play sandbox collision sound
             Invoke("GameOver",0.5f);
             Debug.Log("Switch to gameOver");
@@ -186,14 +194,17 @@ public class PlayerMovement : MonoBehaviour
 
                 // increment number of kids collected by 1
             }
-            //pick.kidsCollected++; // increment number of kids collected by 1
-            //Destroy(pick.item);
+            
         }
     }
     
     public void GameOver()
     {
-        SceneManager.LoadScene("Lose"); //Change to game over scene when created
+        gameOverCause.text = gameOverString;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("Lose");
+        
     }
 
 }

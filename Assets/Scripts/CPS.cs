@@ -5,7 +5,7 @@ using TMPro;
 
 public class CPS : MonoBehaviour
 {
-
+    public PlayerMovement play;
    
     public GameObject cpsPrefab;
     public GameObject instance;
@@ -23,11 +23,23 @@ public class CPS : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", 2.0f, 10.0f);
+        InvokeRepeating("Spawn", 10.0f, 10.0f);
+        
     }
 
     // Update is called once per frame
     void Update()
+    {
+        InvokeRepeating("Timer", 0.0f, 10.0f);
+    }
+
+    private void Spawn()
+    {
+        instance = Instantiate(cpsPrefab, transform.position, Quaternion.Euler(rotationVector));
+        Invoke("DestroyCPS", 2.0f);
+    }
+
+    private void Timer()
     {
         if (timeRemaining > 0)
         {
@@ -47,12 +59,6 @@ public class CPS : MonoBehaviour
         }
 
         cpsTimer.text = "CPS coming in: " + timeRemaining.ToString();
-    }
-
-    private void Spawn()
-    {
-        instance = Instantiate(cpsPrefab, transform.position, Quaternion.Euler(rotationVector));
-        Invoke("DestroyCPS", 2.0f);
     }
 
     private void DestroyCPS()
