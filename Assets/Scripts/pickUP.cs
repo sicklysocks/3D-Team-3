@@ -89,7 +89,7 @@ public class pickUP : MonoBehaviour
         }
         
 
-        if(kidsCollected == 5)
+        if(kidsCollected >= 5)
         {
             Invoke("Winner", 0.5f);
         }
@@ -138,7 +138,7 @@ public class pickUP : MonoBehaviour
 
        if (sceneName == "DF Level2")
        {
-            SceneManager.LoadScene("Win");
+           SceneManager.LoadScene("Win");
        }
             
     }
