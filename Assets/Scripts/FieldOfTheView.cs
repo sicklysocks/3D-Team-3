@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FieldOfTheView : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class FieldOfTheView : MonoBehaviour
                 if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)) 
                 {
                     canSeePlayer = true;
+                    Debug.Log("I CAN SEE YOU!!....GAME OVER");
+                    SceneManager.LoadScene("Lose"); //load lose scene
                 }
                 else
                 {
@@ -55,7 +58,10 @@ public class FieldOfTheView : MonoBehaviour
           else //player is not in FOV
           {
                 canSeePlayer = true;
-          }
+                Debug.Log("I CAN SEE YOU!!....GAME OVER");
+                SceneManager.LoadScene("Lose"); //load lose scene
+
+            }
         }
         else if (canSeePlayer) //player is no longer in the view of CPS
         {

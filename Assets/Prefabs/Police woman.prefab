@@ -1087,6 +1087,7 @@ GameObject:
   - component: {fileID: 345914251048531708}
   - component: {fileID: 7601892803823575337}
   - component: {fileID: 3001789471389889948}
+  - component: {fileID: 1968694833014509654}
   m_Layer: 0
   m_Name: Police woman
   m_TagString: Untagged
@@ -1156,9 +1157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b24ca0af847b84e8b4df4a06fa1e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 35
-  angle: 121
-  playerRef: {fileID: 0}
+  radius: 2.5
+  angle: 100
+  playerRef: {fileID: 7153613612837907873, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
   targetMask:
     serializedVersion: 2
     m_Bits: 256
@@ -1189,6 +1190,28 @@ CapsuleCollider:
   m_Height: 2.3725739
   m_Direction: 1
   m_Center: {x: 0.009020462, y: 0.6862869, z: -9.077426e-12}
+--- !u!114 &1968694833014509654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982134554786206019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a730fec700b7e4f982296783a7f91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  angle: 36
+  Player: {fileID: 7153613612837907873, guid: 8e9965f6cbf4e774995ec3dca23544f6, type: 3}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 512
+  canSeePlayer: 0
 --- !u!1 &9191465101543134785
 GameObject:
   m_ObjectHideFlags: 0

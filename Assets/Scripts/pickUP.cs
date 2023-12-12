@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class pickUP : MonoBehaviour
 {
+
+  
     private Scene scene; // scene manager stuff
     public GameObject objPosition;
     bool canPickup;
@@ -60,26 +63,6 @@ public class pickUP : MonoBehaviour
         if (item == kids[4])
         {
             mc = kids[4].GetComponent<MoveChild>();
-        }
-        if (item == kids[5])
-        {
-            mc = kids[5].GetComponent<MoveChild>();
-        }
-        if (item == kids[6])
-        {
-            mc = kids[6].GetComponent<MoveChild>();
-        }
-        if (item == kids[7])
-        {
-            mc = kids[7].GetComponent<MoveChild>();
-        }
-        if (item == kids[8])
-        {
-            mc = kids[8].GetComponent<MoveChild>();
-        }
-        if (item == kids[9])
-        {
-            mc = kids[9].GetComponent<MoveChild>();
         }
 
 
@@ -148,4 +131,6 @@ public class pickUP : MonoBehaviour
     {
         canPickup = false;
     }
+
+   
 }

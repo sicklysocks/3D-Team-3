@@ -5,6 +5,8 @@ using TMPro;
 
 public class CPS : MonoBehaviour
 {
+
+   
     public GameObject cpsPrefab;
     public GameObject instance;
 
@@ -57,4 +59,6 @@ public class CPS : MonoBehaviour
     {
         Destroy(instance);
     }
+
+   
 }
