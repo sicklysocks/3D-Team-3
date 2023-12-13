@@ -20,6 +20,6 @@ public class TransitionManager : MonoBehaviour
     }
     void LevelTwoLoader()
     {
-        SceneManager.LoadScene("DF Level2");
+        SceneManager.LoadScene("LevelTwo");
     }
 }

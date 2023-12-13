@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             gameOverString = "You were caught by CPS, thank God!";
             
         }
-<<<<<<< Updated upstream
+
         if (SceneManager.GetActiveScene().name == "LevelOne" || SceneManager.GetActiveScene().name == "LevelTwo") //if current scene is level 1 or 2
         {
           BGmusic.instance.GetComponent<AudioSource>().Pause(); //pause music
@@ -119,9 +119,9 @@ public class PlayerMovement : MonoBehaviour
             MenuMusic.instance.GetComponent<AudioSource>().Play(); //play music
         }
            
-=======
+
         gameOverCause.text = gameOverString;
->>>>>>> Stashed changes
+
     }
 
     private void FixedUpdate()
