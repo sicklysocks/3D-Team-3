@@ -93,7 +93,7 @@ public class pickUP : MonoBehaviour
         {
             Invoke("Winner", 0.5f);
         }
-        if (kidsCollected == 10 && sceneName == "DF Level2")
+        if (kidsCollected == 10 && sceneName == "LevelTwo")
         {
             Invoke("Winner", 1.0f);
         }
@@ -136,7 +136,7 @@ public class pickUP : MonoBehaviour
            SceneManager.LoadScene("Transition"); //Change to Win Scene what created
        }
 
-       if (sceneName == "DF Level2")
+       if (sceneName == "LevelTwo")
        {
            SceneManager.LoadScene("Win");
        }
