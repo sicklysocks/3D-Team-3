@@ -54,9 +54,8 @@ public class PlayerMovement : MonoBehaviour
     public pickUP pick;
     public MoveChild mc;
 
-    
-    public TMP_Text gameOverCause;
-    public static string gameOverString;
+
+    public string death;
 
    
 
@@ -92,36 +91,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (health <= 0)
-        {
-            SceneManager.LoadScene("Credits");
+        { 
+            SceneManager.LoadScene("Lose");
         }
-        if (gameOverCause == null)
-        {
-            gameOverString = "You were caught by CPS, thank God!";
-            
-        }
-
-        if (SceneManager.GetActiveScene().name == "LevelOne" || SceneManager.GetActiveScene().name == "LevelTwo") //if current scene is level 1 or 2
-        {
-          BGmusic.instance.GetComponent<AudioSource>().Pause(); //pause music
-        }
-        else
-        {
-            BGmusic.instance.GetComponent<AudioSource>().Play(); //play music
-        }
-
-        if (SceneManager.GetActiveScene().name == "LevelOne" || SceneManager.GetActiveScene().name == "LevelTwo") //if current scene is level 1 or 2
-        {
-          MenuMusic.instance.GetComponent<AudioSource>().Pause(); //pause music
-        }
-        else
-        {
-            MenuMusic.instance.GetComponent<AudioSource>().Play(); //play music
-        }
-           
-
-        gameOverCause.text = gameOverString;
-
+        
     }
 
     private void FixedUpdate()
@@ -143,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+
+        
     }
 
     void MovePlayer()
@@ -198,7 +173,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Sand Box")
         {
-            gameOverString = "You drowned in a sandbox and died. Those poor children.";
+            
+            death = "sandbox";
             sandbox.Play(); // play sandbox collision sound
             Invoke("GameOver",0.5f);
             Debug.Log("Switch to gameOver");
@@ -224,7 +200,6 @@ public class PlayerMovement : MonoBehaviour
     
     public void GameOver()
     {
-        gameOverCause.text = gameOverString;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene("Lose");

@@ -100,6 +100,15 @@ public class pickUP : MonoBehaviour
         kidsCollectedText.text = "Kids Collected: " + kidsCollected;
 
     }
+
+    private void FixedUpdate()
+    {
+        if (sceneName != "LevelOne" && sceneName != "LevelTwo")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "item")
